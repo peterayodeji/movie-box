@@ -6,7 +6,7 @@ import Footer from "./Footer";
 function Details({ movieDetails }) {
   const baseUrl = "https://image.tmdb.org/t/p/original";
 
-  if (!movieDetails.backdrop_path) return;
+  // if (!movieDetails.backdrop_path) return;
   const backdropUrl = baseUrl + movieDetails.backdrop_path;
 
   const containerStyle = {
