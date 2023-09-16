@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+strong {
+  font-weight: 550;
+}
+
+*:focus {
+  outline: none;
+}
+
+::selection {
+  background-color: #e11d48ff;
+  color: $color-white;
+}

@@ -1,0 +1,41 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-block: 4rem;
+
+  // background-color: rgb(181, 215, 215);
+
+  div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    // background-color: rgb(126, 121, 126);
+  }
+
+  .links {
+    a {
+      &:link,
+      &:visited {
+        font-size: 1.1rem;
+        color: #333;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+      }
+
+      &:hover,
+      &:active {
+        color: #777;
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+  }
+}

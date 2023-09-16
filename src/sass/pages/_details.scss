@@ -1,0 +1,83 @@
+.details-page {
+  width: min(100%, 144rem);
+}
+
+.banner {
+  position: relative;
+  color: #fff;
+  width: min(100%, 144rem);
+  height: 65vh;
+  background-color: rgb(147, 183, 147);
+
+  // background-image: linear-gradient(
+  //     to right bottom,
+  //     rgba(0, 0, 0, 0.1),
+  //     rgba(0, 0, 0, 0.1)
+  //   ),
+  //   url(../../img/nHf61UzkfFno5X1ofIhugCPus2R.jpg);
+
+  background-size: cover;
+  background-position: center center;
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-direction: column;
+    font-size: 2.8rem;
+    font-weight: 600;
+
+    text-align: center;
+
+    img {
+      width: 7rem;
+    }
+  }
+}
+
+.details {
+  padding-block: 4rem;
+  padding: 4rem;
+
+  // background-color: rgb(233, 233, 222);
+
+  .movie-title {
+    // color: rgb(199, 50, 50);
+    color: #e11d48ff;
+  }
+
+  .release-date,
+  .runtime {
+    font-size: 1.4rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .movie-text {
+    color: #333;
+    line-height: 1.2;
+    font-size: 1.6rem;
+  }
+}
+
+// HEADING ABSOLUTE
+.heading-movie {
+  position: absolute;
+  top: 2rem;
+  z-index: 999;
+  width: 100%;
+  width: min(100%, 144rem);
+  font-size: 2rem;
+  color: #fff;
+  padding-inline: 5rem;
+
+  @include respond(phone-md) {
+    padding-inline: 1rem;
+  }
+
+  // background-color: #7d1a1a46;
+}
