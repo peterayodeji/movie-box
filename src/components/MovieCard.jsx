@@ -1,19 +1,31 @@
 import IMDB from "../svg/imdb.svg";
 import RottenTomatoes from "../svg/rot-tomato.svg";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { getRandomIntAsDecimal } from "../util/helpers";
+
+import FavIcon from "../svg/fav.svg";
+import UnFavIcon from "../svg/un-fav.svg";
 
 function MovieCard({ movie }) {
   const navigate = useNavigate();
+  const [favourite, setFavourite] = useState(false);
   const baseUrl = "https://image.tmdb.org/t/p/w500";
   const imageUrl = baseUrl + movie.poster_path;
 
-  const handleClick = function () {
+  const handleCardClick = function () {
     navigate(`/movie/${movie.id}`);
   };
 
+  const handleFavClick = function (e) {
+    e.stopPropagation(); // prevent the click event from reaching the parent
+
+    const favValue = !favourite;
+    setFavourite(favValue);
+  };
+
   return (
-    <div onClick={handleClick} className="card" data-testid="movie-card">
+    <div onClick={handleCardClick} className="card" data-testid="movie-card">
       <img
         className="card__img"
         src={imageUrl}
@@ -38,6 +50,10 @@ function MovieCard({ movie }) {
         Release Date:{" "}
         <span data-testid="movie-release-date">{movie.release_date}</span>
       </p>
+
+      <div onClick={handleFavClick} className="fav-icon">
+        <img src={favourite ? FavIcon : UnFavIcon} alt="favouritism" />
+      </div>
     </div>
   );
 }
