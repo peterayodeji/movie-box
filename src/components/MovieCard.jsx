@@ -13,10 +13,17 @@ function MovieCard({ movie }) {
   };
 
   return (
-    <div onClick={handleClick} className="card">
-      <img className="card__img" src={imageUrl} alt="poster image" />
+    <div onClick={handleClick} className="card" data-testid="movie-card">
+      <img
+        className="card__img"
+        src={imageUrl}
+        alt="poster image"
+        data-testid="movie-poster"
+      />
       <p>MOVIE</p>
-      <h4 className="title">{movie.title}</h4>
+      <h4 className="title" data-testid="movie-title">
+        {movie.title}
+      </h4>
       <div className="rating">
         <div className="imdb">
           <img src={IMDB} alt="imdb" />
@@ -27,7 +34,10 @@ function MovieCard({ movie }) {
           <div>{`${movie.vote_average.toFixed(1) * 10}%`}</div>
         </div>
       </div>
-      <p>{`Release Date: ${movie.release_date}`}</p>
+      <p>
+        Release Date:{" "}
+        <span data-testid="movie-release-date">{movie.release_date}</span>
+      </p>
     </div>
   );
 }

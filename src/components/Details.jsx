@@ -28,14 +28,26 @@ function Details({ movieDetails }) {
         </div>
 
         <div className="details">
-          <h3 className="heading--tertiary movie-title">
+          <h3
+            data-testid="movie-title"
+            className="heading--tertiary movie-title"
+          >
             {movieDetails.title}
           </h3>
           <div className="release-date">
-            Release Date: {getUTCDate(movieDetails.release_date)}
+            Release Date:{" "}
+            <span data-testid="movie-release-date">
+              {getUTCDate(movieDetails.release_date)}
+            </span>
           </div>
-          <div className="runtime">Runtime: {movieDetails.runtime} minutes</div>
-          <p className="movie-text">{movieDetails.overview}</p>
+          <div className="runtime">
+            Runtime:{" "}
+            <span data-testid="movie-runtime">{movieDetails.runtime}</span>{" "}
+            minutes
+          </div>
+          <p className="movie-text" data-testid="movie-overview">
+            {movieDetails.overview}
+          </p>
         </div>
       </div>
 
