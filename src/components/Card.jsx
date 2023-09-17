@@ -7,7 +7,7 @@ import { getRandomIntAsDecimal } from "../util/helpers";
 import FavIcon from "../svg/fav.svg";
 import UnFavIcon from "../svg/un-fav.svg";
 
-function MovieCard({ movie }) {
+function Card({ movie }) {
   const navigate = useNavigate();
   const [favourite, setFavourite] = useState(false);
   const baseUrl = "https://image.tmdb.org/t/p/w500";
@@ -58,4 +58,4 @@ function MovieCard({ movie }) {
   );
 }
 
-export default MovieCard;
+export default Card;

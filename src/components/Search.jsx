@@ -1,4 +1,4 @@
-import MovieCard from "./MovieCard";
+import Card from "./Card";
 import HeaderBar from "./HeaderBar";
 import Footer from "./Footer";
 import useSearchContext from "../hooks/use-search-context";
@@ -7,7 +7,7 @@ function Search({ searchResults }) {
   const { search } = useSearchContext();
 
   const renderedCards = searchResults.map((result) => {
-    return <MovieCard key={result.id} movie={result} />;
+    return <Card key={result.id} movie={result} />;
   });
 
   return (
